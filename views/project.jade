@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    #project
+        .container
+            .row
+                .col-xs-12.backgound-color8.color6
+                    .row.header
+                        .col-xs-2.text-center
+                            a(href="/")
+                                img.homepage(src="/img/anneso7.svg")
+                        .col-xs-10.text-right
+                            ul.list-unstyled
+                                li
+                                    a.selected(href="/portfolio.html") Réalisation
+                                li
+                                    a(href="/index.html#about") Qui suis-je ?
+                                li
+                                    a(href="/index.html#contact") Contact
+            br
+            br
+            .row
+                .col-sm-2
+                    ul.list-unstyled.menu.color7
+                        li
+                            a All works
+                        li
+                            a Édition
+                        li
+                            a.selected Identité
+                        li
+                            a Illustration
+                        li
+                            a Web Design
+                        li
+                            a Affiche
+                        li
+                            a Faire-part
+                .col-sm-7
+                    #carousel-example-generic.carousel.slide(data-ride='carousel')
+                        // Indicators
+                        ol.carousel-indicators
+                            li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                            li(data-target='#carousel-example-generic', data-slide-to='1')
+                            li(data-target='#carousel-example-generic', data-slide-to='2')
+                            li(data-target='#carousel-example-generic', data-slide-to='3')
+                            li(data-target='#carousel-example-generic', data-slide-to='4')
+                            li(data-target='#carousel-example-generic', data-slide-to='5')
+                            li(data-target='#carousel-example-generic', data-slide-to='6')
+                        // Wrapper for slides
+                        .carousel-inner(role='listbox')
+                            .item.active
+                                img.img-responsive(src="/img/portfolio/afnor/afnor_01.png")
+                            .item
+                                img.img-responsive(src="/img/portfolio/afnor/afnor_02.png")
+                            .item
+                                img.img-responsive(src="/img/portfolio/afnor/afnor_03.png")
+                            .item
+                                img.img-responsive(src="/img/portfolio/afnor/afnor_04.png")
+                            .item
+                                img.img-responsive(src="/img/portfolio/afnor/afnor_05.png")
+                            .item
+                                img.img-responsive(src="/img/portfolio/afnor/afnor_06.png")
+                            .item
+                                img.img-responsive(src="/img/portfolio/afnor/afnor_07.png")
+
+                        // Controls
+                        a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+                        a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+                .col-sm-3
+                    div
+                        h1 Afnor
+                    p Création d'une nouvelle identité pour le catalogue 2015 d'Afnor Compétences, qui propose aux professionnels une offre de formation, multiples, variés et rigoureusement précis.
+                    p Réflexion autour d'un visuel de couverture, plus chaleureux et humain, déclinable sur différentes thématiques : création d'un principe de triangles de couleurs et de visuels de personnes, évoquant les multiples compétences d'Afnor.
+                    p Élaboration d'une gamme de pictogrammes pour identifier les différentes thématiques.
+                    p Hierarchisation des informations et mise en place d'une structure facilitatant la lecture et l'organisation des informatisations : principe de rubriquage, onglets, couleurs et pictogrammes.

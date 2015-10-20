@@ -1,0 +1,104 @@
+@import '../../node_modules/bootstrap/less/variables';
+
+#project {
+  .carousel {
+    .carousel-control {
+      width: 50%;
+    }
+    .right, .left {
+      background: none;
+    }
+
+    &:hover {
+      .carousel-indicators {
+        display: inherit;
+      }
+    }
+
+    .carousel-indicators {
+      display: none;
+      li {
+        background-color: #b0b0af;
+        width: 15px;
+        height: 15px;
+        margin: 0 5px;
+        border: 0;
+
+        &.active {
+          background-color: #90c4b1;
+        }
+      }
+    }
+  }
+
+  .header {
+    height: 120px;
+    .homepage {
+      height: 80px;
+      margin-top: 20px;
+    }
+    ul {
+      margin-top: 46px;
+      margin-right: 40px;
+      li {
+        display: inline-block;
+        margin: 0 15px;
+        font-size: 18px;
+
+        a {
+          text-decoration: none;
+          &.selected, &:hover {
+            padding-bottom: 2px;
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+
+  .menu {
+    li {
+      padding: 6px 0 6px 6px;
+    }
+    a {
+      &.selected {
+        color: #90c4b1;
+        font-weight: bold;
+      }
+      text-transform: uppercase;
+    }
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b0b0af;
+    display: inline-block;
+    font-size: 26px;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 200;
+  }
+}
+
+@media only screen and (max-device-width: 500px) {
+  #project {
+    .header {
+      ul {
+        margin-top: 24px;
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-lg) {
+  #project {
+    .container {
+      width: inherit;
+    }
+  }
+}
