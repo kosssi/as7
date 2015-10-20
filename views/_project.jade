@@ -1,0 +1,41 @@
+extends _layout_with_header
+
+block content
+    #project
+        br
+        br
+        .container
+            .row
+                .col-sm-2
+                    - var selected = post.category
+                    include _menu
+                .col-sm-7
+                    #carousel.carousel.slide(data-ride='carousel')
+                        // Indicators
+                        if post.pictures > 1
+                            ol.carousel-indicators
+                                li.active(data-target='#carousel', data-slide-to='0')
+                                - var n = 1
+                                while n < post.pictures
+                                    li(data-target='#carousel', data-slide-to=n++)
+                        // Wrapper for slides
+                        .carousel-inner(role='listbox')
+                            .item.active
+                                img.img-responsive(src="/portfolio/" + post.path + "/" + post.path + "_01.png")
+                            - var n = 2
+                            while n < post.pictures + 1
+                                if n < 10
+                                    .item
+                                        img.img-responsive(src="/portfolio/" + post.path + "/" + post.path + "_0" + n++ + ".png")
+                                else
+                                    .item
+                                        img.img-responsive(src="/portfolio/" + post.path + "/" + post.path + "_" + n++ + ".png")
+
+                        // Controls
+                        if post.pictures > 1
+                            a.left.carousel-control(href='#carousel', role='button', data-slide='prev')
+                            a.right.carousel-control(href='#carousel', role='button', data-slide='next')
+                .col-sm-3
+                    div
+                        h1= post.title
+                    block text

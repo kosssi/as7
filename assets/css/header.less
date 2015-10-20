@@ -1,0 +1,41 @@
+@import '../../node_modules/bootstrap/less/variables';
+
+#header {
+  .header {
+    height: 120px;
+    .homepage {
+      height: 80px;
+      margin-top: 20px;
+    }
+    ul {
+      margin-top: 46px;
+      margin-right: 40px;
+      li {
+        display: inline-block;
+        margin: 0 15px;
+        font-size: 18px;
+
+        a {
+          text-decoration: none;
+          &.selected, &:hover {
+            padding-bottom: 2px;
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 500px) {
+  #header {
+    .header {
+      ul {
+        margin-top: 24px;
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+}
