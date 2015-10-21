@@ -1,0 +1,1 @@
+{"version":3,"sources":["/opt/dev/freelance/anneso/roots/assets/css/menu.less"],"names":[],"mappings":"AAAA,KACE;EACE,sBAAA;;AAFJ,KAIE;EAKE,yBAAA;;AAJA,KADF,EACG;EACC,cAAA;EACA,iBAAA","sourcesContent":[".menu {\n  li {\n    padding: 6px 0 6px 6px;\n  }\n  a {\n    &.selected {\n      color: #90c4b1;\n      font-weight: bold;\n    }\n    text-transform: uppercase;\n  }\n}\n"]}
