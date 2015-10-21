@@ -4,7 +4,7 @@ dynamic_content = require 'dynamic-content'
 roots_yaml      = require('roots-yaml')
 
 module.exports =
-  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf', '.idea/**']
+  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf', '.idea/**', '.publish/**']
 
   debug: true
   open_browser: false
