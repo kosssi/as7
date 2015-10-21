@@ -11,7 +11,7 @@ module.exports =
 
   extensions: [
     js_pipeline(files: ['assets/js/jquery.js', 'assets/js/carousel.js', 'assets/js/*.coffee']),
-    css_pipeline(files: 'assets/css/*.less', out: '/css/build.css'),
+    css_pipeline(files: 'assets/css/*.less'),
     dynamic_content(),
     roots_yaml(),
   ]
