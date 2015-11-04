@@ -2,25 +2,28 @@
   "name": "anne-so7",
   "description": "AnneSo7 website",
   "scripts": {
+    "postinstall": "node_modules/.bin/bower install",
     "clean": "node_modules/.bin/gulp clean",
-    "deploy": "node_modules/.bin/roots compile -e production && node_modules/.bin/gulp deploy",
-    "watch": "node_modules/.bin/roots watch"
+    "compile": "npm run clean   && node_modules/.bin/roots compile -e production",
+    "deploy": " npm run compile && node_modules/.bin/gulp deploy",
+    "watch": "  npm run clean   && node_modules/.bin/roots watch"
   },
   "dependencies": {
-    "bootstrap": "^3.3.5",
-    "coffee-script": "^1.0.0",
-    "css-pipeline": "0.3.x",
-    "del": "^2.0.2",
-    "dynamic-content": "^0.3.0",
-    "gulp": "^3.9.0",
-    "gulp-gh-pages": "^0.5.4",
-    "jade": "^1.0.0",
-    "jquery": "^2.1.4",
-    "js-pipeline": "0.2.x",
-    "jstransformer-marked": "^1.0.0",
-    "less": "^2.5.3",
-    "marked": "0.3.x",
-    "roots": "^3.1.0",
-    "roots-yaml": "0.0.4"
+    "bootstrap": "3.3.5",
+    "bower": "1.6.5",
+    "coffee-script": "1.0.0",
+    "css-pipeline": "0.3.1",
+    "del": "2.0.2",
+    "dynamic-content": "0.3.0",
+    "gulp": "3.9.0",
+    "gulp-gh-pages": "0.5.4",
+    "jade": "1.0.0",
+    "jquery": "2.1.4",
+    "js-pipeline": "0.2.2",
+    "jstransformer-marked": "1.0.0",
+    "less": "2.5.3",
+    "marked": "0.3.5",
+    "roots": "3.1.0",
+    "roots-config": "0.0.2"
   }
 }

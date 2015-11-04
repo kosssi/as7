@@ -1,0 +1,21 @@
+{
+  "name": "anne-so7",
+  "description": "AnneSo7 website",
+  "main": "",
+  "authors": [
+    "Simon Constans <simonc@linux.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kosssi/as7",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Scrollify": "~0.1.10"
+  }
+}

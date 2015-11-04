@@ -1,4 +1,122 @@
-extends _layout
+extends layout/_layout
 
 block content
-  a(href="/portfolio.html") Portfolio
+  #home
+    section#header(data-section-name='Bienvenue')
+      .centery
+        img.logo(src='img/logo.svg', alt='')
+        img.home(src='img/home.svg', alt='')
+
+    section#portfolio(data-section-name='Realisation')
+      .centery
+        .container
+          .row
+            .col-lg-12.text-center
+              h2 Réalisation
+              h4 Quelques projets en recettes...
+              div
+                p Entreprises de toutes contrées, dirigeant en quête d'une communication visuelle colorée,
+                  br
+                  | PME fraîchement lancée, service communication overbooké, pour détenteur d'un projet vitaminé...
+                  br
+                  | J'aime créer et travailler pour tous les publics. La preuve en images...
+          .row
+            .col-sm-8.col-sm-offset-2
+              each category in config.categories
+                .col-xs-6.portfolio-item.text-center.col-md-4
+                  a.portfolio-link(href='portfolio.html#' + category)
+                    each project in site.portfolio.all().reverse()
+                      if project.category == category
+                        img.img-responsive(src='/portfolio/' + project.path + '/' + project.path + '_thumbnail.png', alt=category)
+                        .caption= category
+                        - break
+
+    // http://tympanus.net/codrops/2015/10/28/effect-ideas-for-card-stacks/
+    mixin facette(name, title, paragraph, img, color, titleColor)
+      .modal.fade(tabindex='-1', role='dialog', aria-labelledby= name, aria-hidden='true', id= name)
+        .modal-dialog
+          .modal-content
+            .modal-body
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') &times;
+              div(class='round backgound-' + color)
+                img(src= img)
+              h2(class='text-center ' + titleColor)= title
+              p.text-center
+                | !{paragraph}
+
+    section#about.clearfix(data-section-name='Qui suis-je')
+      .centery
+        .container
+          .row
+            .col-lg-12
+              h2 Qui suis-je ?
+              p Toutes les facettes d'Anne-So 7
+          .row
+            .col-lg-12
+              ul
+                li
+                  a(data-toggle='modal', data-target='#chouette') Chouette
+                li
+                  a(data-toggle='modal', data-target='#petite') Petite
+                li
+                  a(data-toggle='modal', data-target='#dynamique') Dynamique
+                li
+                  a(data-toggle='modal', data-target='#souriante') Souriante
+                li
+                  a(data-toggle='modal', data-target='#arc-en-ciel') Arc en ciel
+                //li
+                //  a(data-toggle='modal', data-target='#creative') Créative
+                li
+                  a(data-toggle='modal', data-target='#petillante') Pétillante
+          .row
+            +facette(
+            'chouette', 'Chouette',
+            'Positive et enjouée, j’aime rencontrer, écouter, discuter, imaginer, m’extasier, créer, m’évader... Et bien sur dessiner !',
+            'img/about/hibou.svg', 'color2', 'color2'
+            )
+            +facette(
+            'dynamique', 'Dynamique',
+            'Certes je ne me distingue pas par une importante taille de jambes, mais je suis montée sur ressorts ! Très active, je mène une vie tambour battant. Avec une perspective : profiter de chaque instant. Ma manière de travailler est imprégnée de ce mode de vie : toujours plus rapide et réactive pour mes clients !',
+            'img/about/dynamique.svg', 'color3', 'color5'
+            )
+            .clearfix.visible-sm-block
+            +facette(
+            'petite', 'Petite',
+            "Originaire de Limoges (ville dont <br>je me sens proche par la taille notamment !) Je n'aurais pas pu faire carrière dans le basket-ball... <br>Mais comptez sur moi pour prendre de la hauteur dans vos projets !",
+            'img/about/petite.svg', 'color1', 'color4'
+            )
+            .clearfix.visible-md-block.visible-lg-block
+            +facette(
+            'arc-en-ciel', 'Arc en ciel',
+            'Sensible à l’art, amatrice et créatrice de design, j’aime les visuels colorés.<br>Jouer sur les formes, les typographies, les nuances. Moi, Anne So7, me mettrai en quatre, mais vous en verrez de toutes les couleurs !',
+            'img/about/arc-en-ciel.svg', 'color6', 'color5'
+            )
+            .clearfix.visible-sm-block
+            +facette(
+            'souriante', 'Souriante',
+            'Positive et enjouée, j’aime rencontrer, écouter, discuter, imaginer, m’extasier, créer, m’évader...<br/>Et bien sur dessiner !',
+            'img/about/souriante.svg', 'color1', 'color4'
+            )
+            +facette(
+            'petillante', 'Pétillante',
+            'Pleine d’énergie dans la vie, j’essaie de saupoudrer mes réalisations d’énergie et vitalité. A cet titre, j’ai un attrait tout particulier pour raviver une communication ancienne ou mettre du peps à une plus moderne. Anne So7 aussi donne des ailes !',
+            'img/about/petillante.svg', 'color3', 'color3'
+            )
+
+     section#footer.clearfix(data-section-name='Contact')
+       .centery
+         .container
+           .row
+             .col-xs-8.col-xs-offset-2.col-md-6.col-md-offset-3
+               h2 Contact
+               h4 Un projet, une question, une fixette ?
+               p N'hésitez pas à m'écrire, je réponds à toutes les questions (vraiment!) et ce, dans les plus brefs délais !
+             .col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
+               a.round(href='mailto:pro@anneso7.com')
+                 img(src='/img/contact/enveloppe.svg')
+               a(href='mailto:pro@anneso7.com') pro@anneso7.com
+             .col-sm-4.col-md-3
+               a.round(href='tel:+33643365483')
+                 img(src='/img/contact/telephone.svg')
+               a(href='tel:+33643365483') 06 43 36 54 83

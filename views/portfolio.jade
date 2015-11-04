@@ -1,13 +1,13 @@
-extends _layout_with_header
+extends layout/_layout_with_header
 
 block content
   #portfolio
-    .container
+    .container.inherit
       .row
         .col-sm-2
           br
           br
-          include _menu
+          include layout/_menu
         .col-sm-10.portfolio.color7
           each project in site.portfolio.all().reverse()
             a.thumbnail(href=project._url, data-category=project.category)

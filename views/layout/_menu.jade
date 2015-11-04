@@ -1,9 +1,9 @@
 ul.list-unstyled.menu.color7
-    - var classSelected = data && data.categories.indexOf(selected) == -1 ? 'selected' : '';
+    - var classSelected = config && config.categories.indexOf(selected) == -1 ? 'selected' : '';
     li
         a(class=classSelected, href="/portfolio.html#") All works
-    if data
-        each category in data.categories
+    if config
+        each category in config.categories
             - var classSelected = category == selected ? 'selected' : '';
             li
                 a(class=classSelected, href="/portfolio.html#" + category)= category
